@@ -14,7 +14,7 @@ import static org.openqa.selenium.By.linkText;
 public class SelenideTest {
 
     private final String Url = "https://github.com";
-    private final String Directory = "Prog163/tests_with_allure";
+    private final String Repository = "Prog163/tests_with_allure";
 
     @BeforeAll
     static void beforeAll() {
@@ -34,9 +34,9 @@ public class SelenideTest {
     public void issueSearchTestInGithub() {
         open(Url);
         $(".header-search-input").click();
-        $(".header-search-input").sendKeys(Directory);
+        $(".header-search-input").sendKeys(Repository);
         $(".header-search-input").submit();
-        $(linkText(Directory)).click();
+        $(linkText(Repository)).click();
         $("#issues-tab").shouldHave(text("Issues"));
     }
 }

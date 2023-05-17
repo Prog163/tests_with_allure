@@ -15,15 +15,15 @@ public class StepsForAnnotationStepTest {
     }
 
     @Step("Выполнить поиск репозитория")
-    public void searchRepository(String directory) {
+    public void searchRepository(String repository) {
         $(".header-search-input").click();
-        $(".header-search-input").sendKeys(directory);
+        $(".header-search-input").sendKeys(repository);
         $(".header-search-input").submit();
     }
 
     @Step("Открыть найденный репозиторий")
-    public void openRepository(String directory) {
-        $(linkText(directory)).click();
+    public void openRepository(String repository) {
+        $(linkText(repository)).click();
     }
 
     @Step("Проверить название колонки Issue в репозитории")
